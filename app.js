@@ -12,7 +12,7 @@ const airport = {
     cookiesHour: [],
 
     custCount : function () {
-        const randCust = Math.floor(Math.random() * (this.maxCust - this.minCust + 1));
+        const randCust = Math.round(Math.random() * (this.maxCust - this.minCust ) + this.minCust);
         return randCust;
     }
 };
@@ -25,7 +25,7 @@ const pioneer = {
     cookiesHour: [],
 
     custCount : function () {
-        const randCust = Math.floor(Math.random() * (this.maxCust - this.minCust + 1));
+        const randCust = Math.round(Math.random() * (this.maxCust - this.minCust) + this.minCust);
         return randCust;
     }
 };
@@ -38,7 +38,7 @@ const powells = {
     cookiesHour: [],
 
     custCount : function () {
-        const randCust = Math.floor(Math.random() * (this.maxCust - this.minCust + 1));
+        const randCust = Math.round(Math.random() * (this.maxCust - this.minCust) + this.minCust);
         return randCust;
     }
 };
@@ -51,7 +51,7 @@ const stJohns = {
     cookiesHour: [],
 
     custCount : function () {
-        const randCust = Math.floor(Math.random() * (this.maxCust - this.minCust + 1));
+        const randCust = Math.round(Math.random() * (this.maxCust - this.minCust) + this.minCust);
         return randCust;
     }
 };
@@ -64,7 +64,7 @@ const waterfront = {
     cookiesHour: [],
 
     custCount : function () {
-        const randCust = Math.floor(Math.random() * (this.maxCust - this.minCust + 1));
+        const randCust = Math.round(Math.random() * (this.maxCust - this.minCust) + this.minCust);
         return randCust;
     }
 };
@@ -85,7 +85,7 @@ printList(waterfront);
 
 function daySales(store){
     for (let i = 0; i < 15; i++){
-        const cookiesSale = Math.floor(store.cookiesAvg * store.custCount());
+        const cookiesSale = Math.round(store.cookiesAvg * store.custCount());
         store.cookiesHour.push(cookiesSale);
     }
     store.cookiesHour.push(total(store));
@@ -107,15 +107,3 @@ function total(store){
     }, 0);
     return total;
 };
-
-//     const printHour = document.createElement('li');
-//     printHour.textContent = i + 'am: ' + cookiesSale + 'cookies.';
-//     const storeList = document.getElementById(store.name);
-//     storeList.appendChild(printHour);
-//     }
-//     console.log(store.cookiesHour);
-// };
-// const storeList = document.getElementbyId('lists');
-// const printHour = document.createElement('li');
-// printHour.textContent = store1.cookiesHour[1];
-// storeList.appendChild(printHour); }
