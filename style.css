@@ -3,3 +3,25 @@ li:first-child{
     font-weight: bold;
     list-style-type: none;
 }
+
+body{
+}
+
+table {
+    border: 1px solid grey;
+    text-align: left;
+}
+
+table th {
+    width: 35px;
+    height: 20px;
+    padding: 7px;
+}
+
+#footer {
+    background: lightgrey;
+}
+
+#footer th{
+    background: white;
+}
