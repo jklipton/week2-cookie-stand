@@ -64,7 +64,7 @@ function tableHead() {
     tableId.appendChild(newTh);
     for (let i = 0; i < hours.length; i++){
         const newTh = document.createElement('th');
-        newTh.textContent = `${hours[i]}`;
+        newTh.textContent = hours[i];
         tableId.appendChild(newTh);
     }
 };
@@ -74,9 +74,9 @@ function tableFoot() {
     const tFoot = document.querySelector('#footer tr');
 
     const rowHead = document.createElement('th');
-    rowHead.textContent = `${hourlyTotals[0]}`;
+    rowHead.textContent = hourlyTotals[0];
     tFoot.appendChild(rowHead);    // const rowHead = document.createElement('th');
-    rowHead.textContent = `${hourlyTotals[0]}`;
+    rowHead.textContent = hourlyTotals[0];
     tFoot.appendChild(rowHead);
 
     for (let i = 1; i < hourlyTotals.length; i++){
