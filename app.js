@@ -24,6 +24,7 @@ Stand.prototype.custCount = function () {
 };
 
 Stand.prototype.render = function () {
+    this.custCount();
     let newRow = document.createElement('tr');
 
     const rowHead = document.createElement('th');
@@ -40,8 +41,12 @@ Stand.prototype.render = function () {
     return newRow;
 };
 
-// make each instance
+Stand.prototype.submit = function (){
+    const tBody = document.querySelector('#sales');
+    tBody.appendChild(this.render());
+};
 
+// make each instance')
 const airport = new Stand('airport', 'PDX Airport', 23, 65, 6.3);
 const pioneer = new Stand('pioneer', 'Pioneer Place', 3, 24, 1.2);
 const powells = new Stand('powells', 'Powell\'s', 11, 38, 3.7);
@@ -55,6 +60,23 @@ const hours = ['6:00 am','7:00 am','8:00 am','9:00 am','10:00 am', '11:00 am', '
 
 //print current stands
 buildTable();
+
+//event
+const form = document.querySelector('form');
+
+form.addEventListener('submit', function (){
+    event.preventDefault();
+
+    const title = this.title.value;
+    const minCust = this.minCust.value;
+    const maxCust = this.maxCust.value;
+    const cookiesAvg = this.cookiesAvg.value;
+    const id = normalize(this.title.value);
+
+    const newStand = new Stand (id,title,minCust,maxCust,cookiesAvg);
+    newStand.submit();
+
+});
 
 //functions
 function tableHead() {
@@ -91,10 +113,19 @@ function buildTable() {
     const tBody = document.querySelector('#sales');
 
     for (let i = 0; i < stands.length; i++){
-        stands[i].custCount();
         tBody.appendChild(stands[i].render());
     };
 
     tableFoot();
 };
 
+function normalize(string) {
+    for(let i = 0; i <= string.length; i++) {
+        string = string.replace(' ', '');
+        string = string.replace('.', '');
+        string = string.replace('\'', '');
+        string = string.replace('"', '');
+        string = string.toLowerCase();
+    }
+    return string;
+};

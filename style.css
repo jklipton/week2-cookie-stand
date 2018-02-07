@@ -5,11 +5,14 @@ li:first-child{
 }
 
 body{
+    background: seagreen;
 }
 
 table {
     border: 1px solid grey;
     text-align: left;
+    background: white;
+    margin: auto;
 }
 
 table th {
@@ -24,4 +27,26 @@ table th {
 
 #footer th{
     background: white;
+}
+
+.page-top {
+    text-align: center;
+    margin: auto;
+}
+
+form {
+    width: 890px;
+    margin: auto;
+}
+
+input[type=text] {
+    width: 250px;
+}
+
+input[type=number] {
+    width: 50px;
+}
+
+button {
+    margin-left: 40px;
 }
