@@ -1,17 +1,13 @@
-
-li:first-child{
-    font-weight: bold;
-    list-style-type: none;
-}
-
 body{
-    background: seagreen;
+    background-image: url('images/bg.png');
 }
 
 table {
     border: 1px solid grey;
     text-align: left;
     background: white;
+    width: 80%;
+    min-width: 890px;
     margin: auto;
 }
 
@@ -19,6 +15,10 @@ table th {
     width: 35px;
     height: 20px;
     padding: 7px;
+}
+
+table #sales th{
+    width: 50px;
 }
 
 #footer {
@@ -37,6 +37,7 @@ table th {
 form {
     width: 890px;
     margin: auto;
+    background: white;
 }
 
 input[type=text] {
