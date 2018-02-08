@@ -25,7 +25,7 @@ Stand.prototype.custCount = function () {
 
 Stand.prototype.render = function () {
     this.custCount();
-    let newRow = document.createElement('tr');
+    const newRow = document.createElement('tr');
 
     const rowHead = document.createElement('th');
     rowHead.textContent = `${this.title}`;
@@ -44,6 +44,11 @@ Stand.prototype.render = function () {
 Stand.prototype.submit = function (){
     const tBody = document.querySelector('#sales');
     tBody.appendChild(this.render());
+
+    const tFoot = document.querySelectorAll('#footer tr td');
+    for (let i = 0; i < tFoot.length; i++){
+        tFoot[i].textContent = hourlyTotals[i + 1];
+    }
 };
 
 // make each instance')
@@ -53,8 +58,8 @@ const powells = new Stand('powells', 'Powell\'s', 11, 38, 3.7);
 const stJohns = new Stand('stJohns', 'St. John\'s', 20, 38, 2.3);
 const waterfront = new Stand('waterfront', 'The Waterfront', 2, 16, 4.6);
 
-let stands = [airport, pioneer, powells, stJohns, waterfront];
-let hourlyTotals = ['Hourly Totals:',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
+const stands = [airport, pioneer, powells, stJohns, waterfront];
+const hourlyTotals = ['Hourly Totals:',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
 const hours = ['6:00 am','7:00 am','8:00 am','9:00 am','10:00 am', '11:00 am', '12:00 pm',
     '1:00 pm', '2:00 pm', '3:00 pm', '4:00 pm', '5:00 pm', '6:00 pm', '7:00 pm', '8:00 pm', 'Daily Location Total:'];
 
@@ -67,15 +72,21 @@ const form = document.querySelector('form');
 form.addEventListener('submit', function (){
     event.preventDefault();
 
-    const title = this.title.value;
-    const minCust = this.minCust.value;
-    const maxCust = this.maxCust.value;
-    const cookiesAvg = this.cookiesAvg.value;
-    const id = normalize(this.title.value);
+    const minCust = parseInt(this.minCust.value);
+    const maxCust = parseInt(this.maxCust.value);
 
-    const newStand = new Stand (id,title,minCust,maxCust,cookiesAvg);
-    newStand.submit();
+    if (maxCust > minCust){
+        const title = this.title.value;
+        const cookiesAvg = this.cookiesAvg.value;
+        const id = normalize(this.title.value);
 
+        const newStand = new Stand (id,title,minCust,maxCust,cookiesAvg);
+        stands.push(newStand);
+        newStand.submit();
+    } else {
+        alert('Please enter a higher Max Customers than Min Customers!');
+        return false;
+    }
 });
 
 //functions
