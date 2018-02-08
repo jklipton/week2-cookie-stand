@@ -1,5 +1,8 @@
 body{
-    background-image: url('images/bg.png');
+    background-image: url('images/bg.jpeg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
 table {
@@ -9,6 +12,7 @@ table {
     width: 80%;
     min-width: 890px;
     margin: auto;
+    padding: 5px;
 }
 
 table th {
@@ -29,25 +33,60 @@ table #sales th{
     background: white;
 }
 
+#sales td:last-child{
+    background: lightgray;
+}
+
 .page-top {
     text-align: center;
     margin: auto;
 }
 
+/* Form, Sales Page */
 form {
-    width: 890px;
-    margin: auto;
-    background: white;
+    background-color: rgb(221, 221, 224);
+    margin: 30px auto;
+    padding: 40px;   
+    width: 300px;
+}
+
+fieldset {
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+legend {
+    font-size: 1.5em;
+    font-weight: bold;
 }
 
 input[type=text] {
+    margin:auto;
     width: 250px;
+    margin-bottom:10px;
 }
 
 input[type=number] {
+    margin:auto;
     width: 50px;
+    margin-bottom:10px;
+}
+
+label {
+    margin:auto;
+    padding-bottom: 5px;
+}
+
+input {
+    margin-bottom: 30px;
+    width: 200px;
+    height: 1.5em;
+    padding: 2px;    
 }
 
 button {
-    margin-left: 20px;
+    padding: 5px;
+    margin: auto;
+    margin-top: 15px;
 }
