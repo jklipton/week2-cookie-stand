@@ -51,7 +51,7 @@ Stand.prototype.submit = function (){
     }
 };
 
-// make each instance')
+// make each instance
 const airport = new Stand('airport', 'PDX Airport', 23, 65, 6.3);
 const pioneer = new Stand('pioneer', 'Pioneer Place', 3, 24, 1.2);
 const powells = new Stand('powells', 'Powell\'s', 11, 38, 3.7);
