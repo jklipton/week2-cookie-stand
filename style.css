@@ -2,23 +2,26 @@ body{
     background-color: white;
     padding: 0;
     margin: 0;
+    overflow-x: hidden;
 }
 
 header {
     height: 250px;
-    background-color: white;
+    background-color: #D8E2DC;
     display: flex;
     justify-content: space-between;
     align-content: flex-end;
     position: fixed;
     top: 0;
     width: 100%;
-    border-bottom: 0.2rem solid darkgray;
     z-index: 1;
 }
 
+header, #banner, nav{
+    border-bottom: 0.2rem solid #96897B;
+}
+
 header img {
-    padding: 10px;
     width: 250px;
 }
 
@@ -37,7 +40,6 @@ header a {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    border-bottom: 0.2rem solid darkgray;
 }
 
 #head {
@@ -51,40 +53,45 @@ header a {
 }
 
 #head #text{
-    padding: 15px 280px;
+    padding: 25px 240px;
     outline: 0.2rem solid white;
     text-align: center;
-    min-width: 360px;
+    min-width: 900px;
 }
 
 #head h2{
     color: white;
 }
 
-main{
-    padding: 0;
-    background-color: blanchedalmond;
+#head h1{
+    font-family: 'Shrikhand', cursive;
 }
 
 nav {
     margin:auto;
     width: 100%;
     text-align: center;
-    padding: 10px 0px;
+    background-color: #D8E2DC;
+    position: sticky;
+    top: 230px;
 }
 
 nav a, nav:visited{
     color: #628395;
-    font-family: Cambria, Cochin, Georgia, Times, Times New Roman, serif;
-    size: 2em;
+    font-size: .5em;
     text-decoration: none;
+    font-weight: bold;
 }
 
 nav a {
+    padding: 5px 10px;
+
+}
+
+nav h1{
     display: inline-block;
-    width: 150px;
-    padding-top: 20px;
-    padding-bottom: 20px;
+    font-style: normal;
+    margin: 15px 0;
 }
 
 nav a:hover {
@@ -92,59 +99,130 @@ nav a:hover {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    color:white;
+    color: white;
+}
+
+main{
+    margin: 0;
+    width: 100%;
+    background-color: #A1B0AB;
+    padding: 45px 0px;
+    letter-spacing: 1px;
+    color: #5B534B;
+}
+
+
+#content{
+    display: inline-block;
 }
 
 #locations{
-    flex: 0 0 auto;
-    width: 30%;
-    overflow: hidden;
+    display: none;
+    width: 80%;
+    margin: auto;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    align-content: space-between;
+    min-width: 450px;
 }   
 
-#locations #container{
-    width: 100%;
-    height: 99%;
-    overflow-y: scroll;
-    overflow-x: hidden;
-    padding: 60px 17px 275px 0px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-    align-content: space-around;
+#contact{
+    display: none;
 }
 
-#locations .store{
-    width: 300px;
-    background-color: white;
-    border-radius: 16px;
-    border: 5px solid #ccc;
+.card {
+    /* Add shadows to create the "card" effect */
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    width: 200px;
+    margin: 10px;
+    text-align: center;
+    padding-bottom: 10px;
+    background-color: rgb(219, 211, 185);
+    border-radius: 10px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
-.store img{
-    float: left;
-    height: 100px;
-    width: 100px;
-    border-radius: 30%;
-    padding: 5px;
+/* On mouse-over, add a deeper shadow */
+.card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
 }
 
-content{
-    flex: 0 1 auto;
-    width: 75%;
+.card .imgCon {
+    width: 200px;
+    height: 180px;
+    display: block;
+    overflow: hidden;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.card img{
+    max-width:100%;
+}
+
+#contact{
+    display: none;
+}
+
+#twit img{
+    width: 70px;
+}
+
+#twit {
+    width: 250px;
+    margin: auto;
+}
+
+main h1{
+    color:  #365f75;
+    padding-bottom: 15px;
+    width: 270px;
 }
 
 h1 {
-    font-family: 'Shrikhand', cursive;
+    font-family: 'Source Sans Pro', sans-serif;
     color: white;
     font-size: 3.2em;
+    letter-spacing: 3px; 
+    text-align: center;
+    margin: auto;
 }
 
+main h1:after{
+    display:block;
+    content: '';
+    border-bottom: solid 2px #E2CF93;
+    transform: scaleX(0);
+    transition: transform 250ms ease-in-out;
+}
+
+main h1:hover::after{
+    transform: scaleX(1);
+}
+
+
 h2 {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-family: Cambria, Cochin, Georgia, Times, Times New Roman, serif;
     color: #628395;
     font-size: 1.5em;
+    text-align: center;
 }
+
+p {
+    font-family: Cambria, Cochin, Georgia, Times, Times New Roman, serif;
+    font-size: 1.2em;
+    margin: 15px auto;
+    width: 70%;
+    min-width: 400px;
+}
+
+footer {
+    background-color: #A1B0AB;
+    padding-top: 80px;
+}
+
 
 /* Sales page */
 table {
