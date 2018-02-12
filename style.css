@@ -1,7 +1,230 @@
 body{
-    background-image: url('images/bg.png');
+    background-color: white;
+    padding: 0;
+    margin: 0;
+    overflow-x: hidden;
 }
 
+header {
+    height: 250px;
+    background-color: #D8E2DC;
+    display: flex;
+    justify-content: space-between;
+    align-content: flex-end;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+}
+
+header, #banner, nav{
+    border-bottom: 0.2rem solid #96897B;
+}
+
+header img {
+    width: 250px;
+}
+
+header a {
+    margin: auto;
+}
+
+#banner {
+    margin-top: 250px;
+    width: 100%;
+    /* keep specific height */
+    height: 320px;
+    background-image: url('images/pat3.jpg');
+    /* don't change */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#head {
+    width: 80%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    margin: auto;
+}
+
+#head #text{
+    padding: 25px 240px;
+    outline: 0.2rem solid white;
+    text-align: center;
+    min-width: 900px;
+}
+
+#head h2{
+    color: white;
+}
+
+#head h1{
+    font-family: 'Shrikhand', cursive;
+}
+
+nav {
+    margin:auto;
+    width: 100%;
+    text-align: center;
+    background-color: #D8E2DC;
+    position: sticky;
+    top: 230px;
+}
+
+nav a, nav:visited{
+    color: #628395;
+    font-size: .5em;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav a {
+    padding: 5px 10px;
+
+}
+
+nav h1{
+    display: inline-block;
+    font-style: normal;
+    margin: 15px 0;
+}
+
+nav a:hover {
+    background-image: url('images/clicky.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    color: white;
+}
+
+main{
+    margin: 0;
+    width: 100%;
+    background-color: #A1B0AB;
+    padding: 45px 0px;
+    letter-spacing: 1px;
+    color: #5B534B;
+}
+
+
+#content{
+    display: inline-block;
+}
+
+#locations{
+    display: none;
+    width: 80%;
+    margin: auto;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    align-content: space-between;
+    min-width: 450px;
+}   
+
+#contact{
+    display: none;
+}
+
+.card {
+    /* Add shadows to create the "card" effect */
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    width: 200px;
+    margin: 10px;
+    text-align: center;
+    padding-bottom: 10px;
+    background-color: rgb(219, 211, 185);
+    border-radius: 10px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+/* On mouse-over, add a deeper shadow */
+.card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.card .imgCon {
+    width: 200px;
+    height: 180px;
+    display: block;
+    overflow: hidden;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.card img{
+    max-width:100%;
+}
+
+#contact{
+    display: none;
+}
+
+#twit img{
+    width: 70px;
+}
+
+#twit {
+    width: 250px;
+    margin: auto;
+}
+
+main h1{
+    color:  #365f75;
+    padding-bottom: 15px;
+    width: 270px;
+}
+
+h1 {
+    font-family: 'Source Sans Pro', sans-serif;
+    color: white;
+    font-size: 3.2em;
+    letter-spacing: 3px; 
+    text-align: center;
+    margin: auto;
+}
+
+main h1:after{
+    display:block;
+    content: '';
+    border-bottom: solid 2px #E2CF93;
+    transform: scaleX(0);
+    transition: transform 250ms ease-in-out;
+}
+
+main h1:hover::after{
+    transform: scaleX(1);
+}
+
+
+h2 {
+    font-family: Cambria, Cochin, Georgia, Times, Times New Roman, serif;
+    color: #628395;
+    font-size: 1.5em;
+    text-align: center;
+}
+
+p {
+    font-family: Cambria, Cochin, Georgia, Times, Times New Roman, serif;
+    font-size: 1.2em;
+    margin: 15px auto;
+    width: 70%;
+    min-width: 400px;
+}
+
+footer {
+    background-color: #A1B0AB;
+    padding-top: 80px;
+}
+
+
+/* Sales page */
 table {
     border: 1px solid grey;
     text-align: left;
@@ -9,6 +232,8 @@ table {
     width: 80%;
     min-width: 890px;
     margin: auto;
+    margin-top: 90px;
+    padding: 5px;
 }
 
 table th {
@@ -29,25 +254,61 @@ table #sales th{
     background: white;
 }
 
-.page-top {
-    text-align: center;
-    margin: auto;
+#sales td:last-child{
+    background: lightgray;
 }
 
+/* Form, Sales Page */
 form {
-    width: 890px;
-    margin: auto;
-    background: white;
+    background-color: rgb(221, 221, 224);
+    margin: 30px auto;
+    padding: 40px;   
+    width: 300px;
+}
+
+fieldset {
+    padding: 15px;
+    display: flex;
+    justify-content: center space-around;
+}
+
+legend {
+    font-size: 1.5em;
+    font-weight: bold;
 }
 
 input[type=text] {
+    margin:auto;
     width: 250px;
+    margin-bottom: 10px;
 }
 
 input[type=number] {
+    margin:auto;
     width: 50px;
 }
 
-button {
-    margin-left: 20px;
+label {
+    margin:auto;
+    padding-bottom: 5px;
 }
+
+input {
+    width: 200px;
+    height: 1.5em;
+    padding: 2px;    
+    border: none;
+}
+
+button {
+    margin: auto;
+    margin-top: 15px;
+    background-color: white;
+    border: none;
+    padding: 10px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
