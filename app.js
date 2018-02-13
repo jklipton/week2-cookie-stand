@@ -1,6 +1,5 @@
 'use strict';
 
-
 //construct store object
 function Stand (id,title,min,max,avg){
     this.id = id;
