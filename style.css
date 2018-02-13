@@ -225,6 +225,15 @@ footer {
 
 
 /* Sales page */
+#back{
+    text-align: right;
+    margin-right: 0;
+}
+
+#back a, #back a:visited{
+    color: black;
+}
+
 table {
     border: 1px solid grey;
     text-align: left;
